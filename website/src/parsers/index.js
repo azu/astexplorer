@@ -1,13 +1,12 @@
-const localRequire = require.context('./', true, /^\.\/(?!utils|transpilers)[^/]+\/(transformers\/([^/]+)\/)?(codeExample\.txt|[^/]+?\.js)$/);
-
+// const localRequire = require.context('./', true, /^\.\/(?!utils)[^/]+\/(transformers\/([^/]+)\/)?(codeExample\.txt|[^/]+?\.js)$/);
+const localRequire = require.context('./', true, /^\.\/(md|html|txt)\/(transformers\/([^/]+)\/)?(codeExample\.txt|[^/]+?\.js)$/);
 function interopRequire(module) {
-  return module.__esModule ? module.default : module;
+    return module.__esModule ? module.default : module;
 }
 
 const files =
   localRequire.keys()
   .map(name => name.split('/').slice(1));
-
 const categoryByID = {};
 const parserByID = {};
 const transformerByID = {};
@@ -24,7 +23,6 @@ export const categories =
   .filter(name => name[1] === 'index.js')
   .map(([catName]) => {
     let category = localRequire(`./${catName}/index.js`);
-
     categoryByID[category.id] = category;
 
     category.codeExample = interopRequire(localRequire(`./${catName}/codeExample.txt`))
@@ -59,7 +57,8 @@ export const categories =
   });
 
 export function getDefaultCategory() {
-  return categoryByID.javascript;
+  return categoryByID["markdown"];
+  // return categoryByID.javascript;
 }
 
 export function getDefaultParser(category = getDefaultCategory()) {

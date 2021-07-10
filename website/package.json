@@ -24,6 +24,7 @@
     "eslint-plugin-require-in-package": "^1.0.3",
     "exports-loader": "^0.7.0",
     "file-loader": "^6.0.0",
+    "gh-pages": "^0.12.0",
     "html-webpack-plugin": "^3.2.0",
     "inline-manifest-webpack-plugin": "^4.0.1",
     "js-yaml": "^3.13.1",
@@ -44,6 +45,7 @@
     "@angular-eslint/template-parser": "^1.0.0",
     "@angular/compiler": "^11.2.0",
     "@babel/eslint-parser": "^7.12.0",
+    "@babel/parser": "^7.14.3",
     "@babel/runtime": "^7.12.0",
     "@creditkarma/thrift-parser": "^1.2.0",
     "@gengjiawen/monkey-wasm": "^0.5.0",
@@ -51,6 +53,11 @@
     "@glimmer/syntax": "^0.73.1",
     "@humanwhocodes/momoa": "^1.0.0",
     "@mdx-js/mdx": "^1.5.8",
+    "@textlint/kernel": "^12.0.0",
+    "@textlint/markdown-to-ast": "^12.0.0",
+    "@textlint/text-to-ast": "^12.0.0",
+    "@textlint/textlint-plugin-markdown": "^12.0.0",
+    "@textlint/textlint-plugin-text": "^12.0.0",
     "@typescript-eslint/parser": "^4.1.0",
     "@vue/compiler-dom": "^3.0.0-rc.10",
     "@webassemblyjs/wast-parser": "^1.9.0",
@@ -107,6 +114,7 @@
     "jscodeshift": "^0.11.0",
     "json-stringify-safe": "^5.0.1",
     "json-to-ast": "^2.1.0",
+    "json-url": "^3.0.0",
     "lodash.isequal": "^4.5.0",
     "luaparse": "^0.3.0",
     "lucene": "^2.1.1",
@@ -149,6 +157,7 @@
     "svelte": "^3.4.1",
     "tenko": "^1.0.6",
     "tern": "^0.24.3",
+    "textlint-plugin-html": "^0.2.0",
     "traceur": "0.0.111",
     "tslint": "^6.1.1",
     "typescript": "^4.0.3",
@@ -170,6 +179,7 @@
     "build-dev": "rimraf ../out/* && cross-env NODE_ENV=development webpack -d --mode=development",
     "watch": "webpack -dw --mode=development",
     "lint": "node_modules/eslint/bin/eslint.js src/",
-    "fontcustom": "fontcustom compile ./fontcustom/input-svg/ --config=./fontcustom/config.yml"
+    "fontcustom": "fontcustom compile ./fontcustom/input-svg/ --config=./fontcustom/config.yml",
+    "deploy": "npm run build && gh-pages -d ../out"
   }
 }

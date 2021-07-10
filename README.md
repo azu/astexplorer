@@ -1,5 +1,23 @@
 ## AST explorer
 
+## Fork version for textlint
+
+This version limited for [textlint](http://textlint.github.io/ "textlint").
+
+- Markdown
+- Plain text
+
+Bellow is original text.
+
+Please Visit [https://textlint.github.io/astexplorer](https://textlint.github.io/astexplorer).
+
+**Notes**
+
+- Deploy: use `website/deploy.sh`
+
+------
+
+
 [![Join the chat at https://gitter.im/astexplorer/Lobby](https://badges.gitter.im/astexplorer/Lobby.svg)](https://gitter.im/astexplorer/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/fkling/astexplorer.svg?branch=master)](https://travis-ci.org/fkling/astexplorer)
 

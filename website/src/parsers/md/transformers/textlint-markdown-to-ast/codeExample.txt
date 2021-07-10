@@ -1,0 +1,8 @@
+module.exports = function (context) {
+    const {Syntax, RuleError, report, getSource} = context;
+    return {
+        [Syntax.Str](node){
+            report(node, new Error("error"));
+        }
+    };
+}

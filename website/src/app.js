@@ -20,8 +20,9 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import {canSaveTransform, getRevision} from './store/selectors';
 import {loadSnippet} from './store/actions';
 import {render} from 'react-dom';
-import * as gist from './storage/gist';
-import * as parse from './storage/parse';
+import * as urlStore from './storage/urlStore';
+// import * as gist from './storage/gist';
+// import * as parse from './storage/parse';
 import StorageHandler from './storage';
 import '../css/style.css';
 import parserMiddleware from './store/parserMiddleware';
@@ -73,7 +74,7 @@ const AppContainer = connect(
 )(App);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const storageAdapter = new StorageHandler([gist, parse]);
+const storageAdapter = new StorageHandler([urlStore]);
 const store = createStore(
   astexplorer,
   revive(LocalStorage.readState()),
